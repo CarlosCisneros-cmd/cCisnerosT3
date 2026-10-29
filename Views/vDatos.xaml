@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="cCisnerosT3.Views.vDatos"
+             Title="Datos del Contacto">
+
+    <ContentPage.Resources>
+        <Style x:Key="EstiloTitulo" TargetType="Label">
+            <Setter Property="FontSize" Value="22"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="TextColor" Value="DarkGreen"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+        </Style>
+        <Style x:Key="EstiloCampo" TargetType="Label">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="TextColor" Value="DarkGreen"/>
+        </Style>
+        <Style x:Key="EstiloValor" TargetType="Label">
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+        <Style x:Key="EstiloAporte" TargetType="Label">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="TextColor" Value="DarkRed"/>
+        </Style>
+        <Style x:Key="EstiloBoton" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="DarkGreen"/>
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="CornerRadius" Value="10"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="10" Padding="20">
+
+            <Image Source="contacto.png"
+                   HeightRequest="100"/>
+
+            <Label Text="DATOS DEL CONTACTO"
+                   Style="{StaticResource EstiloTitulo}"/>
+
+            <Grid RowSpacing="10" ColumnSpacing="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Tipo de identificación:" Style="{StaticResource EstiloCampo}" Grid.Row="0" Grid.Column="0"/>
+                <Label x:Name="lblTipo" Style="{StaticResource EstiloValor}" Grid.Row="0" Grid.Column="1"/>
+
+                <Label Text="Identificación:" Style="{StaticResource EstiloCampo}" Grid.Row="1" Grid.Column="0"/>
+                <Label x:Name="lblIdentificacion" Style="{StaticResource EstiloValor}" Grid.Row="1" Grid.Column="1"/>
+
+                <Label Text="Nombres:" Style="{StaticResource EstiloCampo}" Grid.Row="2" Grid.Column="0"/>
+                <Label x:Name="lblNombres" Style="{StaticResource EstiloValor}" Grid.Row="2" Grid.Column="1"/>
+
+                <Label Text="Apellidos:" Style="{StaticResource EstiloCampo}" Grid.Row="3" Grid.Column="0"/>
+                <Label x:Name="lblApellidos" Style="{StaticResource EstiloValor}" Grid.Row="3" Grid.Column="1"/>
+
+                <Label Text="Fecha:" Style="{StaticResource EstiloCampo}" Grid.Row="4" Grid.Column="0"/>
+                <Label x:Name="lblFecha" Style="{StaticResource EstiloValor}" Grid.Row="4" Grid.Column="1"/>
+
+                <Label Text="Correo:" Style="{StaticResource EstiloCampo}" Grid.Row="5" Grid.Column="0"/>
+                <Label x:Name="lblCorreo" Style="{StaticResource EstiloValor}" Grid.Row="5" Grid.Column="1"/>
+
+                <Label Text="Salario:" Style="{StaticResource EstiloCampo}" Grid.Row="6" Grid.Column="0"/>
+                <Label x:Name="lblSalario" Style="{StaticResource EstiloValor}" Grid.Row="6" Grid.Column="1"/>
+
+                <Label Text="Aporte IESS (9.45%):" Style="{StaticResource EstiloAporte}" Grid.Row="7" Grid.Column="0"/>
+                <Label x:Name="lblAporte" Style="{StaticResource EstiloAporte}" Grid.Row="7" Grid.Column="1"/>
+            </Grid>
+
+            <Button x:Name="btnExportar"
+                    Text="Exportar a .txt"
+                    Style="{StaticResource EstiloBoton}"
+                    Clicked="btnExportar_Clicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

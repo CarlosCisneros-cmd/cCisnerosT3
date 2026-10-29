@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="cCisnerosT3.Views.vContacto"
+             Title="Registro de Contactos">
+
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="TextColor" Value="#1E5AAA"/>
+        </Style>
+        <Style TargetType="Entry">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="BackgroundColor" Value="#F2F6FC"/>
+            <Setter Property="TextColor" Value="Black"/>
+        </Style>
+        <Style TargetType="Picker">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="BackgroundColor" Value="#F2F6FC"/>
+            <Setter Property="TextColor" Value="Black"/>
+        </Style>
+        <Style TargetType="DatePicker">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="BackgroundColor" Value="#F2F6FC"/>
+            <Setter Property="TextColor" Value="Black"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#1E5AAA"/>
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="CornerRadius" Value="10"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="10" Padding="20">
+
+            <Image Source="logo_uisrael.png"
+                   HeightRequest="120"/>
+
+            <Label Text="REGISTRO DE CONTACTOS"
+                   FontSize="22"
+                   HorizontalOptions="Center"/>
+
+            <Label Text="Tipo de identificación"/>
+            <Picker x:Name="pkTipo"
+                    SelectedIndexChanged="pkTipo_SelectedIndexChanged">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>CI</x:String>
+                        <x:String>RUC</x:String>
+                        <x:String>Pasaporte</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Label Text="Identificación"/>
+            <Entry x:Name="txtIdentificacion"
+                   TextChanged="txtIdentificacion_TextChanged"/>
+
+            <Label Text="Nombres"/>
+            <Entry x:Name="txtNombres"/>
+
+            <Label Text="Apellidos"/>
+            <Entry x:Name="txtApellidos"/>
+
+            <Label Text="Fecha"/>
+            <DatePicker x:Name="dpFecha"
+                        Format="dd/MM/yyyy"/>
+
+            <Label Text="Correo"/>
+            <Entry x:Name="txtCorreo"
+                   Keyboard="Email"/>
+
+            <Label Text="Salario"/>
+            <Entry x:Name="txtSalario"
+                   Keyboard="Numeric"/>
+
+            <Button x:Name="btnGuardar"
+                    Text="Ver datos"
+                    Clicked="btnGuardar_Clicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
